@@ -1,19 +1,25 @@
 package com.example.app.controller;
 
-import org.springframework.context.annotation.Bean;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
+import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
-import org.springframework.security.crypto.password.PasswordEncoder;
 
 @Configuration
 @EnableWebSecurity
-public class SecurityConfiguration {
+public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 	
-	@Bean
-	public PasswordEncoder passwordEncoder() {
+	@Autowired
+	private UserDetailsService userDetailsService;
+	
+	@Override
+	public void configure(AuthenticationManagerBuilder auth) throws Exception {
 		
-		return new BCryptPasswordEncoder();
+		auth.userDetailsService(userDetailsService).passwordEncoder(new BCryptPasswordEncoder());
+		
 	}
-
+	
 }

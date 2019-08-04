@@ -2,7 +2,6 @@ package com.example.app.controller;
 
 import java.util.ArrayList;
 import java.util.List;
-
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -10,7 +9,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.SessionAttribute;
 import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.bind.support.SessionStatus;
-
 import com.example.app.model.DaoPost;
 import com.example.app.model.DaoUser;
 import com.example.app.model.Post;
