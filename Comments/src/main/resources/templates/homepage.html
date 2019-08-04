@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Francisco posts' site</title>
+    <link rel="stylesheet" type="text/css" href="../static/homepage.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>Welcome to my site!</h1>
+        <h6>Thank you for passing by, I would love to hear about you.</h6>
+    </header>
+
+    <form th:action="@{/login}" th:method="get">
+        <label>Username:</label>
+        <input type="text" name="username">
+
+        <label>Password</label>
+        <input type="password" name="password">
+
+        <button type="submit">Log in</button>
+    </form>
+
+    <a th:href="@{/goRegister}"><button type="submit">Register</button></a>
+    <p>You don't have an account yet? Feel free to create one!</p>
+
+</body>
+
+</html>
